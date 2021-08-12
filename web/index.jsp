@@ -46,8 +46,8 @@
             </div>
         </nav>
 
-        <div class="container-sm">
-            <h1 class="text-center mt-5 mb-5">Student Management</h1>
+        <div class="container-sm shadow p-3 mb-5 rounded" style="margin-top: 140px">
+            <h1 class="text-center mt-3 mb-5">Student Management</h1>
             <div class="row">
 
                 <div class="col"> <form method="POST" action="#">
@@ -75,8 +75,8 @@
                             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="fee" id="fee" required>
                         </div>
 
-                        <button type="submit" id="submit" value="submit" name="submit" class="btn btn-primary mt-3">Submit</button>
-                        <button type="reset" id="reset" value="reset" name="reset" class="btn btn-danger mt-3">Reset</button>
+                        <button type="submit" id="submit" value="submit" name="submit" class="btn btn-primary mt-3 mb-5">Submit</button>
+                        <button type="reset" id="reset" value="reset" name="reset" class="btn btn-danger mt-3 mb-5">Reset</button>
                     </form></div>
                 <div class="col ml-5">
                     <table class="table ml-5">
