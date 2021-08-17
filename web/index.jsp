@@ -12,6 +12,22 @@
         Connection con;
         PreparedStatement pat;
         ResultSet rs;
+
+        Class.forName("com.mysql.jdbc.Driver");
+        con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "");
+        pat = con.prepareStatement("insert into records(fname,lname,course,fee)values(?,?,?,?)");
+        pat.setString(1, fname);
+        pat.setString(2, lname);
+        pat.setString(3, course);
+        pat.setString(4, fee);
+        pat.executeUpdate();
+%>
+
+<script>
+    alert("Record Added")
+</script>
+
+<%
     }
 %>
 
@@ -82,6 +98,7 @@
                     <table class="table ml-5">
                         <thead>
                             <tr>
+                                <th scope="col">Id</th>
                                 <th scope="col">First Name</th>
                                 <th scope="col">Last Name</th>
                                 <th scope="col">Courses</th>
@@ -90,22 +107,14 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Otto</td>
-                                <td>@mdo</td>
+                                <!--<th scope="row">1</th>-->
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
-                            <tr>
-                                <th scope="row">2</th>
-                                <td>Jacob</td>
-                                <td>Thornton</td>
-                                <td>@fat</td>
-                            </tr>
-                            <tr>
-                                <th scope="row">3</th>
-                                <td colspan="2">Larry the Bird</td>
-                                <td>@twitter</td>
-                            </tr>
+                          
                         </tbody>
                     </table>
                 </div>
