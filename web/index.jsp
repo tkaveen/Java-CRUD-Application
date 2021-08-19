@@ -103,18 +103,42 @@
                                 <th scope="col">Last Name</th>
                                 <th scope="col">Courses</th>
                                 <th scope="col">Fee</th>
+                                <th scope="col">Actions</th>
                             </tr>
-                        </thead>
+                        </thead>                       
+
                         <tbody>
+                            <%
+                                Connection con;
+                                PreparedStatement pat;
+                                ResultSet rs;
+
+                                Class.forName("com.mysql.jdbc.Driver");
+                                con = DriverManager.getConnection("jdbc:mysql://localhost/student", "root", "");
+
+                                String query = "select * from records";
+                                Statement st = con.createStatement();
+                                rs = st.executeQuery(query);
+                                while (rs.next()) {
+                                    String id = rs.getString("id");
+
+
+                            %>
                             <tr>
-                                <!--<th scope="row">1</th>-->
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><%=rs.getString("id")%></td>
+                                <td><%=rs.getString("fname")%></td>
+                                <td><%=rs.getString("lname")%></td>
+                                <td><%=rs.getString("course")%></td>
+                                <td><%=rs.getString("fee")%></td>
+                                <td> 
+                                    <button type="edit" id="edit" value="edit" name="edit" class="btn btn-success btn-sm">Edit</button>
+                                     <button type="delete" id="delete" value="delete" name="delete" class="btn btn-danger btn-sm">Delete</button>
+                                </td>
                             </tr>
-                          
+                            <%                                  }
+
+                            %>
+
                         </tbody>
                     </table>
                 </div>
