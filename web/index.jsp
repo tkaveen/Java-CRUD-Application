@@ -131,8 +131,10 @@
                                 <td><%=rs.getString("course")%></td>
                                 <td><%=rs.getString("fee")%></td>
                                 <td> 
-                                    <button type="edit" id="edit" value="edit" name="edit" class="btn btn-success btn-sm">Edit</button>
-                                     <button type="delete" id="delete" value="delete" name="delete" class="btn btn-danger btn-sm">Delete</button>
+                                    <!--<button type="edit" id="edit" value="edit" name="edit" class="btn btn-success btn-sm" href="update.jsp?id=<%=id%>">Edit</button>-->
+                                    <a href="update.jsp?id=<%=id%>"" class="btn btn-success btn-sm" role="button">Edit</a>
+                                    <a href="delete.jsp?id=<%=id%>"" class="btn btn-danger btn-sm" role="button">Delete</a>
+                                    <!--<button type="delete" id="delete" value="delete" name="delete" class="btn btn-danger btn-sm">Delete</button>-->
                                 </td>
                             </tr>
                             <%                                  }
